@@ -3,6 +3,7 @@
 struct IntArray {
   void add(int i);
   int get(size_t id) const;
+  size_t size() const;
 };
 
 int main() {
@@ -14,5 +15,13 @@ int main() {
   }
   IntArray a;
   a.add(next);
+  while (std::cin >> next) {
+    a.add(next);
+  }
+
+  for (size_t i = 0; i < a.size(); ++i) {
+    int d = a.get(i);
+  }
+
   return 0;
 }
