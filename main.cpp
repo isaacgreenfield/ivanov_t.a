@@ -8,6 +8,8 @@ struct IntArray
   int last() const;
   IntArray(int i);
   ~IntArray();
+  int * a;
+  size_t k;
 };
 
 int main()
@@ -33,5 +35,15 @@ int main()
     std::cout << count << std::endl;
   } catch (...) {
     return 2;
+  }
   return 0;
+}
+
+IntArray::~IntArray() {
+  delete[] a;
+}
+IntArray::IntArray(int i) {
+  k(1);
+  a(new int[1]);
+  a[0] = i;
 }
