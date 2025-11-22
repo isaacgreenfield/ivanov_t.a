@@ -5,7 +5,7 @@ struct IntMatrix
 {
   size_t rows;
   size_t cols;
-  IntArray data;
+  IntArray* data;
 
   void fill(int i);
   size_t size() const noexcept;
@@ -13,9 +13,9 @@ struct IntMatrix
 
   bool add_row(size_t last_row, int x);
   bool add_col(size_t last_col, int x);
-  bool expand(size_t last_row, size_t last_col)
+  bool expand(size_t last_row, size_t last_col);
 
-  IntMatrix(size_t r, size_t c);
+  IntMatrix(size_t r, size_t c, int first_elem);
   ~IntMatrix();
 };
 #endif

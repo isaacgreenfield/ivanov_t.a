@@ -2,7 +2,7 @@
 #define INTARRAY_H
 struct IntArray
 {
-  int * a;
+  int* a;
   size_t k;
 
   void add(int i);
