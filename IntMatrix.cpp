@@ -36,7 +36,46 @@ void IntMatrix::add_col(size_t last_col, int x)
 }
 void IntMatrix::add_row(size_t last_row, int x)
 {
-
+  if (last_row == 0)
+  {
+    IntArray tmp = IntArray(x);
+    for (size_t i = 0; i < cols; ++i)
+    {
+      tmp.add(x);
+    }
+    for (size_t i = 0; i < rows; ++i)
+    {
+      for (size_t j = 0; j < cols; ++j)
+      {
+        tmp.add(get(i * cols + j));
+      }
+    }
+    data = tmp;
+  }
+  else
+  {
+    IntArray tmp = IntArray(get(0));
+    for (size_t i = 0; i < last_row; ++i)
+    {
+      for (size_t j = 0; j < cols; ++j)
+      {
+        tmp.add(get(i * cols + j));
+      }
+    }
+    for (size_t i = 0; i < cols; ++i)
+    {
+      tmp.add(x);
+    }
+    for (size_t i = last_row; i < rows; ++i)
+    {
+      for (size_t j = 0; j < cols; ++j)
+      {
+        tmp.add(get(i * cols + j));
+      }
+    }
+    data = tmp;
+  }
+  rows++;
 }
 void IntMatrix::expand(size_t last_row, size_t last_col)
 {
