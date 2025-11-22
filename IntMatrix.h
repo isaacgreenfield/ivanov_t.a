@@ -17,5 +17,6 @@ struct IntMatrix
 
   IntMatrix(size_t r, size_t c, int first_elem);
   ~IntMatrix();
+  IntMatrix & operator=(const IntMatrix & rhs);
 };
 #endif

@@ -2,6 +2,19 @@
 IntArray::~IntArray() {
   delete[] a;
 }
+
+IntArray & IntArray::operator=(const IntArray &rhs) {
+  int* tmp = new int[rhs.size()];
+  for (size_t i = 0; i < rhs.size(); ++i)
+  {
+    tmp[i] = rhs.get(i);
+  }
+  delete[] a;
+  a = tmp;
+  k = rhs.size();
+  return *this;
+}
+
 IntArray::IntArray(int i):
   k(1),
   a(new int[1])

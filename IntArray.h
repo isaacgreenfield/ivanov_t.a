@@ -13,5 +13,6 @@ struct IntArray
 
   IntArray(int i);
   ~IntArray();
+  IntArray & operator=(const IntArray & rhs);
 };
 #endif
