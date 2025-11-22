@@ -79,7 +79,8 @@ void IntMatrix::add_row(size_t last_row, int x)
 }
 void IntMatrix::expand(size_t last_row, size_t last_col)
 {
-
+  add_row(last_row, 0);
+  add_col(last_col, 0);
 }
 
 void IntMatrix::fill(int x)
